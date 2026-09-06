@@ -1,0 +1,64 @@
+:root {
+  --ink: #14161a;
+  --slate: #2a2e36;
+  --steel: #3e5c76;
+  --fog: #8b919a;
+  --mist: #c8ccd2;
+  --bone: #f4f1ea;
+  --paper: #ffffff;
+  --cue: #e8913a;
+  --cue-soft: #f0b36a;
+  --sage: #4a9b7f;
+  --warn: #c45c4a;
+  --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-jb), "JetBrains Mono", ui-monospace, monospace;
+  --header-h: 4.5rem;
+  --rail-y: 42vh;
+  --max: 68rem;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+html {
+  background: var(--ink);
+  color: var(--bone);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--cue) 55%, var(--ink));
+  color: var(--bone);
+}
+
+:focus-visible {
+  outline: 2px solid var(--cue);
+  outline-offset: 3px;
+}
+
+a {
+  color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
