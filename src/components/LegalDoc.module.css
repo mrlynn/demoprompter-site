@@ -1,0 +1,77 @@
+.page {
+  min-height: 100svh;
+  background: var(--bone);
+  color: var(--ink);
+}
+
+.main {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 3.5rem var(--gutter) 5rem;
+}
+
+.head {
+  display: grid;
+  gap: 0.85rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cue);
+}
+
+.head h1 {
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.lede,
+.date {
+  color: var(--steel);
+}
+
+.date {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.body {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.body h2 {
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  margin: 0.4rem 0 0;
+}
+
+.body p,
+.body li {
+  color: color-mix(in srgb, var(--ink) 88%, var(--steel));
+}
+
+.body ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.body a {
+  color: var(--steel);
+  text-decoration-color: var(--cue);
+  text-underline-offset: 0.15em;
+}
+
+.body a:hover {
+  color: var(--ink);
+}

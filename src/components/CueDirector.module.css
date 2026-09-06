@@ -1,0 +1,48 @@
+.director {
+  position: relative;
+}
+
+.rail {
+  pointer-events: none;
+  position: fixed;
+  top: var(--rail-y);
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0 var(--gutter);
+  opacity: 0.55;
+}
+
+.railLabel {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cue);
+}
+
+.railLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--cue) 0,
+    color-mix(in srgb, var(--cue) 35%, transparent) 18%,
+    transparent 100%
+  );
+}
+
+@media (max-width: 860px) {
+  .rail {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rail {
+    display: none;
+  }
+}

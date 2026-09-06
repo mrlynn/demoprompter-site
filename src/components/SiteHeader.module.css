@@ -1,0 +1,81 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  height: var(--header-h);
+  backdrop-filter: blur(16px);
+}
+
+.ink {
+  background: color-mix(in srgb, var(--ink) 78%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--mist) 8%, transparent);
+}
+
+.bone {
+  background: color-mix(in srgb, var(--bone) 82%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+  color: var(--ink);
+}
+
+.inner {
+  height: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.mark {
+  width: 1.7rem;
+  height: 1.7rem;
+  flex: none;
+}
+
+.word {
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  font-size: 1.02rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+.nav a {
+  color: var(--fog);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.ink .nav a:hover,
+.ink .nav a:focus-visible {
+  color: var(--bone);
+}
+
+.bone .nav a {
+  color: var(--steel);
+}
+
+.bone .nav a:hover,
+.bone .nav a:focus-visible {
+  color: var(--ink);
+}
+
+@media (max-width: 720px) {
+  .nav a {
+    display: none;
+  }
+}
