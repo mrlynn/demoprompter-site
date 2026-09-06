@@ -16,6 +16,24 @@ export const site = {
   effectiveDate: "September 6, 2026",
 } as const;
 
+const DEFAULT_SITE_URL = "https://demoprompter.app";
+
+function normalize(value: string | undefined): string | null {
+  const raw = value?.trim();
+  if (!raw) return null;
+  const withProtocol = /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
+  try {
+    return new URL(withProtocol).origin;
+  } catch {
+    return null;
+  }
+}
+
 export function siteUrl(): string {
-  return process.env.NEXT_PUBLIC_SITE_URL ?? "https://demoprompter.app";
+  return (
+    normalize(process.env.NEXT_PUBLIC_SITE_URL) ??
+    normalize(process.env.VERCEL_PROJECT_PRODUCTION_URL) ??
+    normalize(process.env.VERCEL_URL) ??
+    DEFAULT_SITE_URL
+  );
 }
